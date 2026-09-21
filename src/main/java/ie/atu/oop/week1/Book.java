@@ -17,9 +17,9 @@ public class Book {
     public void borrowBook() {
         if (available) {
             available = false;
-            System.out.println(title + "Book Borrowed");
+            System.out.println(title + " has been borrowed successfully");
         } else {
-            System.out.println(title + "not available");
+            System.out.println(title + " is already borrowed");
         }
     }
 }

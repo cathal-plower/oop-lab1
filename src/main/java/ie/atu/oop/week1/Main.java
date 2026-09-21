@@ -11,8 +11,12 @@ public class Main {
         firstBook.title = "Dune";
         firstBook.author = "Frank";
         firstBook.pageCount = 412;
-
+        // before loan
         firstBook.displayDetails();
+        firstBook.borrowBook();
+        //after loan
+        firstBook.displayDetails();
+
 
 
         Book secondBook = new Book();
