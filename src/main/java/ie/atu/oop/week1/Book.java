@@ -1,18 +1,25 @@
 package ie.atu.oop.week1;
 
-public class Book
-{
+public class Book {
     public String title;
     public String author;
     public int pageCount;
     public boolean available = true;
 
-}
 
-public void displaydetails
-{
-    System.out.println("First book:" + title);
-    System.out.println("First book Author :" author);
-    System.out.println("First book Pagecount: "+pagecount);
-    System.out.println("Is book available"+ available);
+    public void displayDetails() {
+        System.out.println("Book: " + title);
+        System.out.println("Book Author :" + author);
+        System.out.println("Book Pagecount: " + pageCount);
+        System.out.println("Book available: " + available);
+    }
+
+    public void borrowBook() {
+        if (available) {
+            available = false;
+            System.out.println(title + "Book Borrowed");
+        } else {
+            System.out.println(title + "not available");
+        }
+    }
 }
