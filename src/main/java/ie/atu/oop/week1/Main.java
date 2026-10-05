@@ -7,7 +7,7 @@ public class Main
     {
         Book first = new Book("Dune", "Frank Herbert", 412);
 
-        Book second = new Book("Clean Code", "Robert C. Martin", 464);
+        Book second = new Book("Clean Code ", "Robert C. Martin", 464);
 
         LibraryService service = new LibraryService();
 
