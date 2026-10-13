@@ -1,26 +1,25 @@
 package ie.atu.oop.week1;
 
-
-public class Main
-{
-    public static void main(String[] args)
-    {
-        Book first = new Book("Dune", "Frank Herbert", 412);
-
-        Book second = new Book("Clean Code", "Robert C. Martin", 464);
-
-        LibraryService service = new LibraryService();
-
-        service.addBook(first);
-        service.addBook(second);
-
-        System.out.println("Total books in Library Service is " + service.getBookCount());
-
-        for(Book book : service.getAllBooks())
-        {
-            System.out.println(book.getTitle());
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        Path file = Path.of("data", "books.csv");
+        List<String> lines = new ArrayList<>();
+        lines.add("title,author,pageCount,status");
+        lines.add("Dune,Frank Herbert,412,AVAILABLE");
+        lines.add("Clean Code,Robert C. Martin,464,AVAILABLE");
+        try {
+            Files.createDirectories(file.getParent());
+            Files.write(file, lines);
+            System.out.println("CSV file written");
         }
-
-
+        catch (IOException ex) {
+            System.out.println("Could not write file: "
+                    + ex.getMessage());
+        }
     }
 }
